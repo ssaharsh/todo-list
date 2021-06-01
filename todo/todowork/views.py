@@ -23,11 +23,3 @@ def home(request):
         inst.save()
         context={'success':True}
     return render(request,'home.html',context)
-
-def delete(request):
-    # if request.method=='POST':
-    #     Title = request.POST.get('Title')
-    #     Desc = request.POST.get('Desc')
-    #     task = Task.objects.get(Title=Title)
-    #     task.delete()
-    return render(request,'show.html')
