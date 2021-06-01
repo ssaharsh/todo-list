@@ -43,7 +43,7 @@
 
     <div class="container col-lg-4" align="center">
         <h1 align="center">VIEW TASKS</h1>
-        {% if task == None  %}
+        {% if  tasks|length < 1  %}
             <h2 align="center"> No task added</h2>
         {% else %}
             <table class="table">
@@ -51,18 +51,13 @@
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Done</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for task in tasks %}
                     <tr>
-                        <form action="delete" method="POST">
-                            {% csrf_token %}
-                            <td id="Title" name="Title">{{task.Title}}</td>
-                            <td id="Desc" name="Desc">{{task.Desc}}</td>
-                            <td><button type="submit" class="btn btn-primary">Done</button></td>
-                        </form>
+                        <td id="Title" name="Title">{{task.Title}}</td>
+                        <td id="Desc" name="Desc">{{task.Desc}}</td>
                     </tr>
                     {% endfor %}
 
