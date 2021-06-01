@@ -48,18 +48,13 @@
                 <tr>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
-                    <th scope="col">Done</th>
                 </tr>
             </thead>
             <tbody>
                 {% for task in tasks %}
                 <tr>
-                    <form action="delete" method="POST">
-                        {% csrf_token %}
-                        <td id="Title" name="Title">{{task.Title}}</td>
-                        <td id="Desc" name="Desc">{{task.Desc}}</td>
-                        <td><button type="submit" class="btn btn-primary">Done</button></td>
-                    </form>
+                    <td>{{task.Title}}</td>
+                    <td>{{task.Desc}}</td>
                 </tr>
                 {% endfor %}
 
