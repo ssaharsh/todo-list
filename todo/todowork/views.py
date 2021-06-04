@@ -7,6 +7,8 @@ from .models import Task
 # Create your views here.
 
 def show(request):
+    if (request.GET.get('DeleteButton')):
+        Task.objects.filter(Title = request.GET.get('DeleteButton')).delete()
     allTasks = Task.objects.all()
     context = {'tasks':allTasks}
     return render(request,'show.html',context)

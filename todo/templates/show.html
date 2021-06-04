@@ -51,6 +51,7 @@
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Done</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,6 +59,11 @@
                     <tr>
                         <td id="Title" name="Title">{{task.Title}}</td>
                         <td id="Desc" name="Desc">{{task.Desc}}</td>
+                        <td>
+                            <form action="" method="get">
+                                <button class = "btn btn-default" name="DeleteButton" value="{{ task.Title }}">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
 
