@@ -15,7 +15,6 @@ ul,
 
 ul {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -41,4 +40,14 @@ ul {
     transform: scale(1.1);
     position: relative;
     z-index: 5;
+}
+
+#button-notes {
+    transition-duration: 0.4s;
+    margin-top: 10px;
+}
+
+#button-notes:hover {
+    background-color: green;
+    color: white;
 }
