@@ -42,49 +42,31 @@
 
     </nav>
 
-    <div class="container" align="center">
+    <div class="container" align="center" width="1200px">
         <h1 align="center">VIEW TASKS</h1>
         {% if tasks|length < 1 %} <h2 align="center"> No task added</h2>
             {% else %}
-            <!-- <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Done</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for task in tasks %}
-                    <tr>
-                        <td id="Title" name="Title">{{task.Title}}</td>
-                        <td id="Desc" name="Desc">{{task.Desc}}</td>
-                        <td>
-                            <form action="" method="get">
-                                <button class = "btn btn-default" name="DeleteButton" value="{{ task.Title }}">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    {% endfor %}
-
-                </tbody>
-            </table> -->
-            <ul>
-                {% for task in tasks %}
-                <li id="li-notes">
-                    <a id="a-notes" href="#">
-                        <h2>{{task.Title}}</h2>
-                        <p>{{task.Desc}}</p>
-                    </a>
-                    <div>
-                        <form action="" method="get">
-                            <button id="button-notes" class="btn btn-default" name="DeleteButton" value="{{ task.Title }}">Done</button>
-                        </form>
+                <ul>
+                    <div class="container-fluid">
+                        <div class="row" >
+                            {% for task in tasks %}
+                                <div  id="note" class="col-lg-3 col-sm-6">
+                                    <li id="li-notes">
+                                        <a id="a-notes" href="#">
+                                            <h2>{{task.Title}}</h2>
+                                            <p>{{task.Desc}}</p>
+                                        </a>
+                                        <div>
+                                            <form action="" method="get">
+                                                <button id="button-notes" class="btn btn-default" name="DeleteButton" value="{{ task.Title }}">Done</button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                </li>
-                
-                {% endfor %}
-            </ul>
+                </ul>
             {% endif %}
 
 
